@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:University"
         mc:Ignorable="d"
-        Title="University" Height="450" Width="800" MinHeight="450" MinWidth="800">
+        Title="University" Height="600" Width="1000" MinHeight="600" MinWidth="1000">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="BGodd.jfif"/>
@@ -21,7 +21,7 @@
         <ListBox Name="Groups" SelectionMode="Single" SelectionChanged="Groups_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20, 50"/>
         <TextBlock Text="Add Group:" Foreground="White" FontWeight="Black" FontSize="14" VerticalAlignment="Top" Margin="0, 280, 0, 0" HorizontalAlignment="Center"/>
         <TextBlock Height="20" Text="Name" VerticalAlignment="Top" Margin="20,300,0,0"/>
-        <TextBox Height="25" VerticalAlignment="Top" Margin="20, 320,20,0"/>
+        <TextBox Name="GroupNameField" Height="25" VerticalAlignment="Top" Margin="20, 320,20,0"/>
         <Button Name="AddGroupButton" Height="20" Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 360,0,0" Click="AddGroupButton_Click"/>
 
 
@@ -38,6 +38,16 @@
 
         <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>
         <ListBox Name="Students" SelectionMode="Single" SelectionChanged="Students_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
-
+        <TextBlock Text="Add Student:" Foreground="White" FontWeight="Black" FontSize="14" VerticalAlignment="Top" Margin="0, 280, 0, 0" HorizontalAlignment="Center" Grid.Column="2"/>
+        <TextBlock Height="20" Text="Name" VerticalAlignment="Top" Margin="20,300,0,0" Grid.Column="2"/>
+        <TextBox Name="StudentNameField" Height="25" VerticalAlignment="Top" Margin="20, 320,20,0" Grid.Column="2"/>
+        <TextBlock Height="20" Text="Lastame" VerticalAlignment="Top" Margin="20,350,0,0" Grid.Column="2"/>
+        <TextBox Name="StudentLastnameField" Height="25" VerticalAlignment="Top" Margin="20, 370,20,0" Grid.Column="2"/>
+        <TextBlock Height="20" Text="Age" VerticalAlignment="Top" Margin="20,400,0,0" Grid.Column="2"/>
+        <TextBox Name="StudentAgeField" Height="25" VerticalAlignment="Top" Margin="20, 420,20,0" Grid.Column="2"/>
+        <TextBlock Height="20" Text="Photo Link (not necessary)" VerticalAlignment="Top" Margin="20,450,0,0" Grid.Column="2"/>
+        <TextBox Name="StudentLinkPhotoField" Height="25" VerticalAlignment="Top" Margin="20, 470,20,0" Grid.Column="2"/>
+        <Button Name="AddStudentButton" Height="20" Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 505,0,0" Grid.Column="2" Click="AddStudentButton_Click"/>
+        
     </Grid>
 </Window>

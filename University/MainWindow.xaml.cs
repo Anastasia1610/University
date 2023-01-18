@@ -71,6 +71,11 @@ namespace University
         {
 
         }
+
+        private void AddStudentButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     class Student
