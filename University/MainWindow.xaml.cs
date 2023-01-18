@@ -32,7 +32,6 @@ namespace University
             Group group2 = new Group("KVO-40", new List<Student> { student3, student4 });
             Groups.Items.Add(group1);
             Groups.Items.Add(group2);   
-            //Students.Items.Add(student1);
         }
 
         private void Groups_SelectionChanged(object sender, SelectionChangedEventArgs e)
