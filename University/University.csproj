@@ -8,17 +8,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="BGodd.jfif" />
     <None Remove="Cat.jfif" />
     <None Remove="Fox.jpeg" />
     <None Remove="Hummingbird.jfif" />
     <None Remove="penguin.jfif" />
+    <None Remove="Photo.png" />
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="BGodd.jfif" />
     <Resource Include="Cat.jfif" />
     <Resource Include="Fox.jpeg" />
     <Resource Include="Hummingbird.jfif" />
     <Resource Include="penguin.jfif" />
+    <Resource Include="Photo.png" />
   </ItemGroup>
 
 </Project>

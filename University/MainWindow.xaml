@@ -5,27 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:University"
         mc:Ignorable="d"
-        Title="University" Height="450" Width="800">
+        Title="University" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="BGodd.jfif"/>
+        </Grid.Background>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <TextBlock Height="20" Text="Groups" VerticalAlignment="Top" Margin="20"/>
+        <TextBlock Height="20" Text="Groups" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20"/>
         <ListBox Name="Groups" SelectionMode="Single" SelectionChanged="Groups_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20, 50"/>
 
-       
-
-        <StackPanel Height="300" Margin="20" Grid.Column="1">
-            
+        <TextBlock Height="20" Text="Info" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="1"/>
+        <StackPanel Height="300" VerticalAlignment="Top" Margin="20, 50" Grid.Column="1">
+            <TextBlock Height="20" Text="Name" VerticalAlignment="Top"/>
+            <TextBox Height="25"/>
+            <TextBlock Height="20" Text="Lastname" VerticalAlignment="Top"/>
+            <TextBox Height="25"/>
+            <TextBlock Height="20" Text="Age" VerticalAlignment="Top"/>
+            <TextBox Height="25"/>
+            <Image Name="Photo" Height="100" Margin="0, 20" Source="Photo.png"/>
         </StackPanel>
 
-        <TextBlock Height="20" Text="Students" VerticalAlignment="Top" Margin="20" Grid.Column="2"/>
+        <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>
         <ListBox Name="Students" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
-
-
 
     </Grid>
 </Window>
