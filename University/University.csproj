@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Cat.jfif" />
+    <None Remove="Fox.jpeg" />
+    <None Remove="Hummingbird.jfif" />
+    <None Remove="penguin.jfif" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Cat.jfif" />
+    <Resource Include="Fox.jpeg" />
+    <Resource Include="Hummingbird.jfif" />
+    <Resource Include="penguin.jfif" />
+  </ItemGroup>
+
+</Project>
