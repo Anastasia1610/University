@@ -46,10 +46,37 @@ namespace University
                 }
             }
         }
+
+        private void Students_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(Students.SelectedItem != null)
+            {
+                Student student = Students.SelectedItem as Student;
+
+                NameField.Text = student.Name;
+                LastnameField.Text = student.LastName;
+                AgeField.Text = (student.Age).ToString();
+                if(student.LinkPhoto != null)
+                {
+                    Photo.Source = BitmapFrame.Create(new Uri(student.LinkPhoto));
+                }
+                else
+                {
+                    Photo.Source = BitmapFrame.Create(new Uri("D:\\Настя\\C#\\University\\University\\Photo.png"));
+                }
+            }
+        }
     }
 
     class Student
     {
+        public Student(string name, string lastName, int age)
+        {
+            Name = name;
+            LastName = lastName;
+            Age = age;
+        }
+
         public Student(string name, string lastName, int age, string linkPhoto)
         {
             Name = name;
@@ -61,7 +88,7 @@ namespace University
         public string Name { get; set; }
         public string LastName { get; set; }
         public int Age { get; set; }
-        public string LinkPhoto { get; set; }
+        public string? LinkPhoto { get; set; }
 
         public override string ToString()
         {

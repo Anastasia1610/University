@@ -23,16 +23,16 @@
         <TextBlock Height="20" Text="Info" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="1"/>
         <StackPanel Height="300" VerticalAlignment="Top" Margin="20, 50" Grid.Column="1">
             <TextBlock Height="20" Text="Name" VerticalAlignment="Top"/>
-            <TextBox Height="25"/>
+            <TextBox Name="NameField" Height="25"/>
             <TextBlock Height="20" Text="Lastname" VerticalAlignment="Top"/>
-            <TextBox Height="25"/>
+            <TextBox Name="LastnameField" Height="25"/>
             <TextBlock Height="20" Text="Age" VerticalAlignment="Top"/>
-            <TextBox Height="25"/>
+            <TextBox Name="AgeField"  Height="25"/>
             <Image Name="Photo" Height="100" Margin="0, 20" Source="Photo.png"/>
         </StackPanel>
 
         <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>
-        <ListBox Name="Students" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
+        <ListBox Name="Students" SelectionMode="Single" SelectionChanged="Students_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
 
     </Grid>
 </Window>
