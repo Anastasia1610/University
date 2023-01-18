@@ -66,6 +66,11 @@ namespace University
                 }
             }
         }
+
+        private void AddGroupButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 
     class Student
