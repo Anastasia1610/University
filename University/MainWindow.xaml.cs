@@ -69,7 +69,12 @@ namespace University
 
         private void AddGroupButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if(!string.IsNullOrEmpty(GroupNameField.Text))
+            {
+                Group newGroup = new Group(GroupNameField.Text);
+                Groups.Items.Add(newGroup);
+                GroupNameField.Text = "";
+            }
         }
 
         private void AddStudentButton_Click(object sender, RoutedEventArgs e)
@@ -102,13 +107,19 @@ namespace University
 
         public override string ToString()
         {
-            return $"{Name}, {LastName}, age: {Age}";    
+            return $"{Name} {LastName}, age: {Age}";    
         }
 
     }
 
     class Group
     {
+        public Group(string name)
+        {
+            Name = name;
+            Students = new List<Student>();
+        }
+
         public Group(string name, List<Student> students)
         {
             Name = name;
