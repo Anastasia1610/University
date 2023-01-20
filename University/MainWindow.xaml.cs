@@ -85,13 +85,6 @@ namespace University
 
     class Student
     {
-        public Student(string name, string lastName, int age)
-        {
-            Name = name;
-            LastName = lastName;
-            Age = age;
-        }
-
         public Student(string name, string lastName, int age, string linkPhoto)
         {
             Name = name;
