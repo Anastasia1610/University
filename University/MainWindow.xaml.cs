@@ -59,13 +59,10 @@ namespace University
                 if(student.LinkPhoto != null)
                 {
                     Photo.Source = BitmapFrame.Create(new Uri(student.LinkPhoto));
-                }
                 else
-                {
                     Photo.Source = BitmapFrame.Create(new Uri("D:\\Настя\\C#\\University\\University\\Photo.png"));
                 }
             }
-        }
 
         private void AddGroupButton_Click(object sender, RoutedEventArgs e)
         {
