@@ -24,7 +24,6 @@
         <TextBox Name="GroupNameField" Height="25" VerticalAlignment="Top" Margin="20, 320,20,0"/>
         <Button Name="AddGroupButton" Height="20" Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 360,0,0" Click="AddGroupButton_Click"/>
 
-
         <TextBlock Height="20" Text="Info" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="1"/>
         <StackPanel Height="300" VerticalAlignment="Top" Margin="20, 50" Grid.Column="1">
             <TextBlock Height="20" Text="Name" VerticalAlignment="Top"/>
@@ -45,9 +44,10 @@
         <TextBox Name="StudentLastnameField" Height="25" VerticalAlignment="Top" Margin="20, 370,20,0" Grid.Column="2"/>
         <TextBlock Height="20" Text="Age" VerticalAlignment="Top" Margin="20,400,0,0" Grid.Column="2"/>
         <TextBox Name="StudentAgeField" Height="25" VerticalAlignment="Top" Margin="20, 420,20,0" Grid.Column="2"/>
-        <TextBlock Height="20" Text="Photo Link (not necessary)" VerticalAlignment="Top" Margin="20,450,0,0" Grid.Column="2"/>
-        <TextBox Name="StudentLinkPhotoField" Height="25" VerticalAlignment="Top" Margin="20, 470,20,0" Grid.Column="2"/>
-        <Button Name="AddStudentButton" Height="20" Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 505,0,0" Grid.Column="2" Click="AddStudentButton_Click"/>
+        <TextBlock Height="20" Text="Add Photo" VerticalAlignment="Top" Margin="20,450,0,0" Grid.Column="2"/>
+        <Button Name="StudentLinkPhotoField" Content="Add" Height="25" VerticalAlignment="Top" Margin="20, 470,20,0" Grid.Column="2" Click="StudentLinkPhotoField_Click"/>
+        <TextBlock Name="PhotoLinkTB" Text="" Height="25" Margin="20, 450,20,0" Grid.Column="2"/>
+        <Button Name="AddStudentButton" Height="20" Content="Add" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 530,0,0" Grid.Column="2" Click="AddStudentButton_Click"/>
         
     </Grid>
 </Window>

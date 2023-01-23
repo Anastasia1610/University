@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="1.jpg" />
     <None Remove="BGodd.jfif" />
     <None Remove="Cat.jfif" />
     <None Remove="Fox.jpeg" />
@@ -17,12 +18,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="BGodd.jfif" />
-    <Resource Include="Cat.jfif" />
-    <Resource Include="Fox.jpeg" />
-    <Resource Include="Hummingbird.jfif" />
-    <Resource Include="penguin.jfif" />
-    <Resource Include="Photo.png" />
+    <Resource Include="1.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="BGodd.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Cat.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Fox.jpeg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Hummingbird.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="penguin.jfif">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Photo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
 </Project>
