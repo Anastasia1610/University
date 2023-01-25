@@ -35,6 +35,8 @@
             <Image Name="Photo" Height="100" Margin="0, 20" Source="Photo.png"/>
         </StackPanel>
 
+        <TextBox Name="StudentINFO" Height="200" VerticalAlignment="Bottom" Margin="20" Grid.Column="1"/>
+
         <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>
         <ListBox Name="Students" SelectionMode="Single" SelectionChanged="Students_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
         <TextBlock Text="Add Student:" Foreground="White" FontWeight="Black" FontSize="14" VerticalAlignment="Top" Margin="0, 280, 0, 0" HorizontalAlignment="Center" Grid.Column="2"/>

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -146,17 +147,28 @@ namespace University
 
         private void StudentLinkPhotoField_Click(object sender, RoutedEventArgs e)
         {
+            // Выбор файла для фото в диалоговом окне
             OpenFileDialog myFileDialog = new OpenFileDialog();
+            myFileDialog.Filter = "Images (*.png)|*.png; |Images (*.jpg)| *.jpg; |Images (*.jpeg)| *.jpeg; |Images (*.jfif)| *.jfif; |All files|*.*; |TXT (*.txt)| *.txt";
 
             if (myFileDialog.ShowDialog() == true)
             {
+                
+                
                 // Проверка на формат файла
                 string photoLink = myFileDialog.FileName;
                 int doteIndex = photoLink.LastIndexOf('.');
+                // photoLink.EndsWith("")
                 photoLink = photoLink.Substring(doteIndex + 1);
 
                 if (photoLink == "jpg" || photoLink == "jpeg" || photoLink == "png" || photoLink == "jfif")
+                {
                     PhotoLinkTB.Text = myFileDialog.FileName;
+                }
+                if (photoLink == "txt")
+                {
+                    StudentINFO.Text = File.ReadAllText(myFileDialog.FileName);
+                }
                 else
                 {
                     MessageBox.Show("Неверный формат файла", "Error", MessageBoxButton.OK);
