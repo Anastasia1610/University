@@ -35,6 +35,7 @@
             <Image Name="Photo" Height="100" Margin="0, 20" Source="Photo.png"/>
         </StackPanel>
 
+        <TextBlock Name="Average" VerticalAlignment="Bottom" Grid.Column="1" Margin="20, 0, 20, 230"/>
         <TextBox Name="StudentINFO" Height="200" VerticalAlignment="Bottom" Margin="20" Grid.Column="1"/>
 
         <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>

@@ -167,7 +167,18 @@ namespace University
                 }
                 if (photoLink == "txt")
                 {
+                    // Вывод текста файла в текстбокс StudentINFO
                     StudentINFO.Text = File.ReadAllText(myFileDialog.FileName);
+
+                    // Вывод среднего балла в текстблок Average
+                    string info = File.ReadAllText(myFileDialog.FileName);
+                    string[] stringsOfInfo = info.Split(";", StringSplitOptions.RemoveEmptyEntries); // Убирает пустые подстроки
+                    List<int> marks = new List<int>();
+                    foreach(var item in stringsOfInfo)
+                    {
+                        marks.Add(int.Parse(item.Split("-")[1]));
+                    }
+                    Average.Text = marks.Average().ToString();  
                 }
                 else
                 {
