@@ -163,10 +163,6 @@ namespace University
 
                 if (photoLink == "jpg" || photoLink == "jpeg" || photoLink == "png" || photoLink == "jfif")
                 {
-                    PhotoLinkTB.Text = myFileDialog.FileName;
-                }
-                if (photoLink == "txt")
-                {
                     // Вывод текста файла в текстбокс StudentINFO
                     StudentINFO.Text = File.ReadAllText(myFileDialog.FileName);
 
@@ -180,16 +176,6 @@ namespace University
                     }
                     Average.Text = marks.Average().ToString();  
                 }
-                else
-                {
-                    MessageBox.Show("Неверный формат файла", "Error", MessageBoxButton.OK);
-                    return;
-                }
-            }
-            else
-            {
-                PhotoLinkTB.Text = "";
-            }
         }
     }
 
