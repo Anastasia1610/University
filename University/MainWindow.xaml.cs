@@ -155,7 +155,7 @@ namespace University
 
         }
 
-        private void StudentLinkPhotoField_Click(object sender, RoutedEventArgs e)
+        private void AddPhoto_Click(object sender, RoutedEventArgs e)
         {
             // Выбор файла для фото в диалоговом окне
             OpenFileDialog myFileDialog = new OpenFileDialog();

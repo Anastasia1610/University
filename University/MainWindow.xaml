@@ -50,8 +50,8 @@
         <TextBlock Height="20" Text="Age" VerticalAlignment="Top" Margin="20,400,0,0" Grid.Column="2"/>
         <TextBox Name="StudentAgeField" Height="25" VerticalAlignment="Top" Margin="20, 420,20,0" Grid.Column="2"/>
         <TextBlock Height="20" Text="Add Photo" VerticalAlignment="Top" Margin="20,450,0,0" Grid.Column="2"/>
-        <Button Name="StudentLinkPhotoField" Content="Add" Height="25" VerticalAlignment="Top" Margin="20, 470,20,0" Grid.Column="2" Click="StudentLinkPhotoField_Click"/>
-        <TextBlock Name="PhotoLinkTB" Text="" Height="25" Margin="20, 450,20,0" Grid.Column="2"/>
+        <Button Name="AddPhoto" Content="Add" Height="25" VerticalAlignment="Top" Margin="20, 470,20,0" Grid.Column="2" Click="AddPhoto_Click"/>
+        <TextBlock Name="PhotoLinkTB" Text="" Height="25" VerticalAlignment="Top" Margin="20, 500,20,0" Grid.Column="2"/>
         <TextBlock Height="20" Text="Add Progress File" VerticalAlignment="Top" Margin="20,530,0,0" Grid.Column="2"/>
         <Button Name="AddFile" Content="Add File" Height="25" VerticalAlignment="Top" Margin="20, 550, 20, 0" Grid.Column="2" Click="AddFile_Click"/>
         <TextBlock Name="ProgressLinkTB" Text="" Height="25" Margin="20, 510,20,0" Grid.Column="2"/>
