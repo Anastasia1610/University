@@ -34,6 +34,7 @@ namespace University
             Group group2 = new Group("KVO-40", new List<Student> { student3, student4 });
             Groups.Items.Add(group1);
             Groups.Items.Add(group2);
+            
         }
 
         private void Groups_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -52,7 +53,7 @@ namespace University
 
         private void Students_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            // При выборе студента отображается информация в Info + фото по умолчанию, если ссілка не введена
+            // При выборе студента отображается информация в Info + фото по умолчанию, если ссылка не введена
             if (Students.SelectedItem != null)
             {
                 Student student = Students.SelectedItem as Student;
@@ -67,6 +68,14 @@ namespace University
                 }
                 else
                     Photo.Source = BitmapFrame.Create(new Uri("Photo.png", UriKind.Relative));
+
+                // При выборе студента изменяется Progress Info
+
+                if (!string.IsNullOrWhiteSpace(student.LinkProgress))
+                    StudentINFO.Text = File.ReadAllText(student.LinkProgress);
+                else
+                    StudentINFO.Text = "";
+
             }
         }
 
@@ -81,7 +90,7 @@ namespace University
             }
         }
 
-        private void AddStudentButton_Click(object sender, RoutedEventArgs e)
+        private void Create_Click(object sender, RoutedEventArgs e)
         {
             // Добавление студента
             // Выход, если группа предварительно не выбрана
@@ -118,6 +127,7 @@ namespace University
 
 
                 Student newStudent = new Student(StudentNameField.Text, StudentLastnameField.Text, age, PhotoLinkTB.Text);
+                newStudent.LinkProgress = ProgressLinkTB.Text; 
                 ((Group)Groups.SelectedItem).Students.Add(newStudent);
                 Students.Items.Add(newStudent);
                 StudentNameField.Text = "";
@@ -153,29 +163,50 @@ namespace University
 
             if (myFileDialog.ShowDialog() == true)
             {
-                
-                
-                // Проверка на формат файла
-                string photoLink = myFileDialog.FileName;
-                int doteIndex = photoLink.LastIndexOf('.');
-                // photoLink.EndsWith("")
-                photoLink = photoLink.Substring(doteIndex + 1);
+                PhotoLinkTB.Text = myFileDialog.FileName;
+            }
+            else
+            {
+                PhotoLinkTB.Text = "";
+            }
+        }
 
-                if (photoLink == "jpg" || photoLink == "jpeg" || photoLink == "png" || photoLink == "jfif")
+        private void AddFile_Click(object sender, RoutedEventArgs e)
+        {
+            // Выбор файла в диалоговом окне
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "File (*.txt)|*.txt";
+
+            if (fileDialog.ShowDialog() == true)
+            {
+                // Отображение пути файла в текстблоке
+                ProgressLinkTB.Text = fileDialog.FileName;
+                       
+                // Вывод текста файла в текстбокс StudentINFO
+                StudentINFO.Text = File.ReadAllText(fileDialog.FileName);
+
+                // Вывод среднего балла в текстблок Average
+                string info = File.ReadAllText(fileDialog.FileName);
+                string[] stringsOfInfo = info.Split(";", StringSplitOptions.RemoveEmptyEntries); // Убирает пустые подстроки
+                List<int> marks = new List<int>();
+                foreach (var item in stringsOfInfo)
                 {
-                    // Вывод текста файла в текстбокс StudentINFO
-                    StudentINFO.Text = File.ReadAllText(myFileDialog.FileName);
-
-                    // Вывод среднего балла в текстблок Average
-                    string info = File.ReadAllText(myFileDialog.FileName);
-                    string[] stringsOfInfo = info.Split(";", StringSplitOptions.RemoveEmptyEntries); // Убирает пустые подстроки
-                    List<int> marks = new List<int>();
-                    foreach(var item in stringsOfInfo)
-                    {
-                        marks.Add(int.Parse(item.Split("-")[1]));
-                    }
-                    Average.Text = marks.Average().ToString();  
+                    marks.Add(int.Parse(item.Split("-")[1]));
                 }
+                Average.Text = marks.Average().ToString();
+            } 
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            //File.WriteAllText(путь, "Hello EveryOne!");
+            foreach (Student item in Students.Items)
+            {
+                if(item == Students.SelectedItem)
+                {
+                    File.WriteAllText(item.LinkProgress, StudentINFO.Text);
+                }
+            }
         }
     }
 
@@ -193,6 +224,8 @@ namespace University
         public string LastName { get; set; }
         public int? Age { get; set; }
         public string? LinkPhoto { get; set; }
+
+        public string? LinkProgress { get; set; }   
 
         public override string ToString()
         {
