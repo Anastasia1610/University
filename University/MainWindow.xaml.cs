@@ -75,7 +75,21 @@ namespace University
                     StudentINFO.Text = File.ReadAllText(student.LinkProgress);
                 else
                     StudentINFO.Text = "";
-
+ 
+                // Обновление среднего балла
+                if (student.LinkProgress == null)
+                    Average.Text = "";
+                else
+                {
+                    string info = File.ReadAllText(student.LinkProgress);
+                    string[] stringsOfInfo = info.Split(";", StringSplitOptions.RemoveEmptyEntries); // Убирает пустые подстроки
+                    List<int> marks = new List<int>();
+                    foreach (var item in stringsOfInfo)
+                    {
+                        marks.Add(int.Parse(item.Split("-")[1]));
+                    }
+                    Average.Text = marks.Average().ToString();
+                }
             }
         }
 
