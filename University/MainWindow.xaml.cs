@@ -139,7 +139,6 @@ namespace University
                     return;
                 }
 
-
                 Student newStudent = new Student(StudentNameField.Text, StudentLastnameField.Text, age, PhotoLinkTB.Text);
                 newStudent.LinkProgress = ProgressLinkTB.Text; 
                 ((Group)Groups.SelectedItem).Students.Add(newStudent);
@@ -148,6 +147,7 @@ namespace University
                 StudentLastnameField.Text = "";
                 StudentAgeField.Text = "";
                 PhotoLinkTB.Text = "";
+                ProgressLinkTB.Text = "";
             }
 
             // Обновление ListBox с группами (для отображения актуального кол-ва студентов после добавления)
