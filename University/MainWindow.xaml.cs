@@ -197,16 +197,30 @@ namespace University
             } 
         }
 
-        private void Save_Click(object sender, RoutedEventArgs e)
+        private void Edit_Click(object sender, RoutedEventArgs e)
         {
             //File.WriteAllText(путь, "Hello EveryOne!");
+
+            // Создание новой строки для файла с оценками
+            string newInfo = $"Math -{int.Parse(Math.Text)};\nC# -{int.Parse(CSh.Text)};\n" +
+                $"Admin -{int.Parse(Admin.Text)};\nC++ -{int.Parse(Cpl.Text)}";
+
+           
             foreach (Student item in Students.Items)
             {
                 if(item == Students.SelectedItem)
                 {
-                    File.WriteAllText(item.LinkProgress, StudentINFO.Text);
+                    File.WriteAllText(item.LinkProgress, newInfo);
+                    StudentINFO.Text = File.ReadAllText(item.LinkProgress);
+                    Average.Text = ((int.Parse(Math.Text) + int.Parse(CSh.Text) + int.Parse(Admin.Text) + int.Parse(Cpl.Text)) / 4).ToString();
                 }
             }
+
+            // Очищение оценок в текстбоксах
+            Math.Text = "";
+            CSh.Text = "";
+            Admin.Text = "";
+            Cpl.Text = "";
         }
     }
 

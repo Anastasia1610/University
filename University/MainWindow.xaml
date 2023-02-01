@@ -36,9 +36,20 @@
         </StackPanel>
 
         <TextBlock Text="Progress Info" VerticalAlignment="Bottom" Grid.Column="1" Margin="20, 0, 20, 235"/>
-        <TextBlock Name="Average" VerticalAlignment="Bottom" Grid.Column="1" Margin="20, 0, 20, 80"/>
-        <TextBox Name="StudentINFO" Height="120" VerticalAlignment="Bottom" Margin="20, 0, 20, 110" Grid.Column="1"/>
-        <Button Name="Save" Content="Save" Height="25" Grid.Column="1" VerticalAlignment="Bottom" Margin="20, 0, 20, 50" Click="Save_Click"/>
+        <TextBox Name="StudentINFO" Height="80" VerticalAlignment="Bottom" Margin="20, 0, 20, 150" Grid.Column="1"/>
+        <TextBlock Name="Average" VerticalAlignment="Bottom" Grid.Column="1" Margin="20, 0, 20, 130"/>
+        <TextBlock Text="Edit grades:" VerticalAlignment="Bottom" Grid.Column="1" Margin="20, 0, 20, 110"/>
+        <StackPanel Orientation="Horizontal" Grid.Column="1" Height="30" VerticalAlignment="Bottom" Margin="20,0,20,80">
+            <TextBlock Text="Math" Margin="4"/>
+            <TextBox Name="Math" Width="25" Margin="4"/>
+            <TextBlock Text="C#" Margin="4"/>
+            <TextBox Name="CSh" Width="25" Margin="4"/>
+            <TextBlock Text="Admin" Margin="4"/>
+            <TextBox Name="Admin" Width="25" Margin="4"/>
+            <TextBlock Text="C++" Margin="4"/>
+            <TextBox Name="Cpl" Width="25" Margin="4"/>
+        </StackPanel>
+        <Button Name="Edit" Content="Edit" Height="25" Grid.Column="1" VerticalAlignment="Bottom" Margin="20, 0, 20, 50" Click="Edit_Click"/>
 
         <TextBlock Height="20" Text="Students" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20" Grid.Column="2"/>
         <ListBox Name="Students" SelectionMode="Single" SelectionChanged="Students_SelectionChanged" Height="200" VerticalAlignment="Top" Margin="20,50" Grid.Column="2"/>
